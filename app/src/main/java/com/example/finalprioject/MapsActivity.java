@@ -28,12 +28,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     /**
      * @param mLocationGranted - boolean to check if app can use user's location
      * @param LOCATION_REQUEST_CODE - used for location permissions
+     * @param mFusedLocationProviderClient - used to gain user's info
      */
     private boolean mLocationGranted = false;
     private static final int LOCATION_REQUEST_CODE = 1234;
-    /**
-     * used to get client's location.
-     */
     private FusedLocationProviderClient mFusedLocationProviderClient;
 
     @Override
@@ -43,12 +41,17 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         getLocationPermission();
     }
 
+    /**
+     * Creates pop-up asking if the app can use the user's location in order to gain their current location
+     */
     private void getLocationPermission() {
         Log.d(TAG, "Getting the user's permission to use location.");
         String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
+        // permission checks
         if (ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
                 && ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_COARSE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             mLocationGranted = true;
+            // Obtain the SupportMapFragment and get notified when the map is ready to be used.
             SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                     .findFragmentById(R.id.map);
             mapFragment.getMapAsync(this);
@@ -57,6 +60,12 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    /**
+     * @param requestCode - request code
+     * @param permissions - permissions we are asking for
+     * @param grantResults - access grant results
+     *  Used to request permissions from the user
+     */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         Log.d(TAG, "Requesting the user's permission to use location.");
@@ -80,6 +89,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
     }
 
+    /**
+     *  Used to get coordinates of the user and center the map to their current location
+     *  Checks to see if the app is able to find the user's location as well
+     */
     private void getCurrentLocation() {
         Log.d(TAG, "Getting the user's current location.");
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
@@ -119,13 +132,15 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
+        // if location is given/granted, then this method will retrieve the user's location
         if (mLocationGranted) {
             getCurrentLocation();
             if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED
                     && ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
                 return;
             }
+            // these will create the blue dot indicating the user's location
+            // ... and will create the centering button
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
         }
