@@ -146,152 +146,152 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         }
 
         // allerton & its mark
-        LatLng allerton = new LatLng(39.9983, 88.6517);
+        LatLng allerton = new LatLng(39.9983, -88.6517);
         mMap.addMarker(new MarkerOptions().position(allerton).title("Allerton Park and Retreat Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(allerton));
 
         // Alma! M!A!T!E!R!
-        LatLng alma = new LatLng(40.1099, 88.2284);
+        LatLng alma = new LatLng(40.1099, -88.2284);
         mMap.addMarker(new MarkerOptions().position(alma).title("Alma Mater"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(alma));
 
         // Foellinger Auditorium
-        LatLng foellinger = new LatLng(40.1059, 88.2273);
+        LatLng foellinger = new LatLng(40.1059, -88.2273);
         mMap.addMarker(new MarkerOptions().position(foellinger).title("Foellinger Auditorium"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(foellinger));
 
         // Grainger Engineering Library
-        LatLng grainger = new LatLng(40.1125, 88.2269);
+        LatLng grainger = new LatLng(40.1125, -88.2269);
         mMap.addMarker(new MarkerOptions().position(grainger).title("Grainger Engineering Library Information Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(grainger));
 
         // Hallene Grateway
-        LatLng hallene = new LatLng(40.1087, 88.2198);
+        LatLng hallene = new LatLng(40.1087, -88.2198);
         mMap.addMarker(new MarkerOptions().position(hallene).title("Hallene Gateway"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(hallene));
 
         // Illini Union
-        LatLng illini = new LatLng(40.1092, 88.2272);
+        LatLng illini = new LatLng(40.1092, -88.2272);
         mMap.addMarker(new MarkerOptions().position(illini).title("Illini Union"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(illini));
 
         // Krannert Center for the Performing Arts
-        LatLng krannert = new LatLng(40.1080, 88.2225);
+        LatLng krannert = new LatLng(40.1080, -88.2225);
         mMap.addMarker(new MarkerOptions().position(krannert).title("Krannert Center for the Performing Arts"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(krannert));
 
         // Memorial Stadium
-        LatLng memorial = new LatLng(40.8206, 96.7056);
+        LatLng memorial = new LatLng(40.8206, -96.7056);
         mMap.addMarker(new MarkerOptions().position(memorial).title("Memorial Stadium"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(memorial));
 
         // National Center for Supercomputing Applications
-        LatLng national = new LatLng(40.1149, 88.2249);
+        LatLng national = new LatLng(40.1149, -88.2249);
         mMap.addMarker(new MarkerOptions().position(national).title("National Center for Supercomputing Applications"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(national));
 
         // Thomas M. Siebel Center for Computer Science
-        LatLng thomas = new LatLng(40.1138, 88.2249);
+        LatLng thomas = new LatLng(40.1138, -88.2249);
         mMap.addMarker(new MarkerOptions().position(thomas).title("Thomas M. Siebel Center for Computer Science"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(thomas));
 
         // Aces Library
-        LatLng aces = new LatLng(40.1028, 88.2251);
+        LatLng aces = new LatLng(40.1028, -88.2251);
         mMap.addMarker(new MarkerOptions().position(aces).title("ACES Library, Information and Alumni Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(aces));
 
         // Alice
-        LatLng alice = new LatLng(40.1080, 88.2200);
+        LatLng alice = new LatLng(40.1080, -88.2200);
         mMap.addMarker(new MarkerOptions().position(alice).title("Alice Campbell Alumni Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(alice));
 
         // Altgeld Hall
-        LatLng altgeld = new LatLng(40.1093, 88.2284);
+        LatLng altgeld = new LatLng(40.1093, -88.2284);
         mMap.addMarker(new MarkerOptions().position(altgeld).title("Altgeld Hall"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(altgeld));
 
         // Armory
-        LatLng armory = new LatLng(40.1048, 88.2320);
+        LatLng armory = new LatLng(40.1048, -88.2320);
         mMap.addMarker(new MarkerOptions().position(armory).title("Armory"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(armory));
 
         // Astronomical
-        LatLng astronomical = new LatLng(40.1052, 88.2260);
+        LatLng astronomical = new LatLng(40.1052, -88.2260);
         mMap.addMarker(new MarkerOptions().position(astronomical).title("Astronomical Observatory"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(astronomical));
 
         // Beckman
-        LatLng beckman = new LatLng(40.1158, 88.2272);
+        LatLng beckman = new LatLng(40.1158, -88.2272);
         mMap.addMarker(new MarkerOptions().position(beckman).title("Beckman Institute for Advanced Science and Technology"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(beckman));
 
         // Carl R.
-        LatLng carl = new LatLng(40.1048, 88.2247);
+        LatLng carl = new LatLng(40.1048, -88.2247);
         mMap.addMarker(new MarkerOptions().position(carl).title("Carl R. Woese Institute for Genomic Biology"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(carl));
 
         // Engineering
-        LatLng engineering = new LatLng(40.1108, 88.2269);
+        LatLng engineering = new LatLng(40.1108, -88.2269);
         mMap.addMarker(new MarkerOptions().position(engineering).title("Engineering Hall"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(engineering));
 
         // Halfway
-        LatLng halfway = new LatLng(52.6998, 2.9680);
+        LatLng halfway = new LatLng(52.6998, -2.9680);
         mMap.addMarker(new MarkerOptions().position(halfway).title("Halfway House"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(halfway));
 
         // Harker Hall
-        LatLng harker = new LatLng(40.1091, 88.2267);
+        LatLng harker = new LatLng(40.1091, -88.2267);
         mMap.addMarker(new MarkerOptions().position(harker).title("Harker Hall"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(harker));
 
         // Krannert Art Museum and Kinkead Pavilion
-        LatLng krannertArt = new LatLng(40.1019, 88.2317);
+        LatLng krannertArt = new LatLng(40.1019, -88.2317);
         mMap.addMarker(new MarkerOptions().position(krannertArt).title("Krannert Art Museum and Kinkead Pavilion"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(krannertArt));
 
         // Lincoln
-        LatLng lincoln = new LatLng(40.1066, 88.2282);
+        LatLng lincoln = new LatLng(40.1066, -88.2282);
         mMap.addMarker(new MarkerOptions().position(lincoln).title("Lincoln Hall"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(lincoln));
 
         // Morrow
-        LatLng morrow = new LatLng(40.1043, 88.2261);
+        LatLng morrow = new LatLng(40.1043, -88.2261);
         mMap.addMarker(new MarkerOptions().position(morrow).title("Morrow Plots"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(morrow));
 
         // Natural History Building
-        LatLng natural = new LatLng(40.1094, 88.2260);
+        LatLng natural = new LatLng(40.1094, -88.2260);
         mMap.addMarker(new MarkerOptions().position(natural).title("Natural History Building"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(natural));
 
         // Round Dairy Barns
-        LatLng round = new LatLng(40.09604, 88.22473);
+        LatLng round = new LatLng(40.09604, -88.22473);
         mMap.addMarker(new MarkerOptions().position(round).title("Round Dairy Barns"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(round));
 
         // Smith
-        LatLng smith = new LatLng(40.1057, 88.2261);
+        LatLng smith = new LatLng(40.1057, -88.2261);
         mMap.addMarker(new MarkerOptions().position(smith).title("Smith Hall"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(smith));
 
         // State Farm
-        LatLng state = new LatLng(40.0962, 88.2359);
+        LatLng state = new LatLng(40.0962, -88.2359);
         mMap.addMarker(new MarkerOptions().position(state).title("State Farm Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(state));
 
         // Spurlock
-        LatLng spurlock = new LatLng(40.1076, 88.2209);
+        LatLng spurlock = new LatLng(40.1076, -88.2209);
         mMap.addMarker(new MarkerOptions().position(spurlock).title("Spurlock Museum"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(spurlock));
 
         // University Library
-        LatLng univLibrary = new LatLng(42.0531, 87.6748);
+        LatLng univLibrary = new LatLng(42.0531, -87.6748);
         mMap.addMarker(new MarkerOptions().position(univLibrary).title("University Library"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(univLibrary));
 
         //Willard Airport
-        LatLng willard = new LatLng(40.0365, 88.2640);
+        LatLng willard = new LatLng(40.0365, -88.2640);
         mMap.addMarker(new MarkerOptions().position(willard).title("Willard Airport"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(willard));
     }
