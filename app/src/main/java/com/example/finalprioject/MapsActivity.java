@@ -181,7 +181,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(krannert));
 
         // Memorial Stadium
-        LatLng memorial = new LatLng(40.8190, -96.7033);
+        LatLng memorial = new LatLng(40.1106, -88.2073);
         mMap.addMarker(new MarkerOptions().position(memorial).title("Memorial Stadium"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(memorial));
 
