@@ -181,7 +181,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(krannert));
 
         // Memorial Stadium
-        LatLng memorial = new LatLng(40.1106, -88.2073);
+        LatLng memorial = new LatLng(40.0992, -88.2360);
         mMap.addMarker(new MarkerOptions().position(memorial).title("Memorial Stadium"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(memorial));
 
@@ -286,7 +286,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.moveCamera(CameraUpdateFactory.newLatLng(spurlock));
 
         // University Library
-        LatLng univLibrary = new LatLng(42.0531, -87.6748);
+        LatLng univLibrary = new LatLng(40.1047, -88.2290);
         mMap.addMarker(new MarkerOptions().position(univLibrary).title("University Library"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(univLibrary));
 
