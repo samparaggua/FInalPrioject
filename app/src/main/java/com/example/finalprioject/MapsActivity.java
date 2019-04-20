@@ -1,6 +1,7 @@
 package com.example.finalprioject;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Location;
 import android.support.annotation.NonNull;
@@ -9,6 +10,8 @@ import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -24,6 +27,7 @@ import com.google.android.gms.tasks.Task;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
+    private Button checklistButton;
     private GoogleMap mMap;
     private static final String TAG = "MapsActivity";
     /**
@@ -44,8 +48,21 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
         getLocationPermission();
+
+        checklistButton = findViewById(R.id.ChecklistID);
+        checklistButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Log.d(TAG, "openCheckList : checklist will cover the map");
+                openCheckList();
+            }
+        });
     }
 
+    public void openCheckList() {
+        Intent intent = new Intent(this, ScrollingActivity.class);
+        startActivity(intent);
+    }
     /**
      * Creates pop-up asking if the app can use the user's location in order to gain their current location
      */
@@ -119,6 +136,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             Log.d(TAG, "getting location; security exception" + e.getMessage());
         }
     }
+
 
     /**
      * Manipulates the map once available.
