@@ -7,7 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -22,7 +22,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
+public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private static final String TAG = "MapsActivity";
@@ -37,21 +37,20 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        Log.d(TAG, "onCreate : creating");
+        Log.d(TAG, "onCreate : creating the map");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
-        getLocationPermission();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                 .findFragmentById(R.id.map);
-        assert mapFragment != null;
         mapFragment.getMapAsync(this);
+        getLocationPermission();
     }
 
     /**
      * Creates pop-up asking if the app can use the user's location in order to gain their current location
      */
     private void getLocationPermission() {
-        Log.d(TAG, "Getting the user's permission to use location.");
+        Log.d(TAG, "Getting the user's permission to use location on the map");
         String[] permission = {Manifest.permission.ACCESS_FINE_LOCATION, Manifest.permission.ACCESS_COARSE_LOCATION};
         // permission checks
         if (ActivityCompat.checkSelfPermission(this.getApplicationContext(), Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED
@@ -74,21 +73,17 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
-        Log.d(TAG, "Requesting the user's permission to use location.");
+        Log.d(TAG, "Requesting the user's permission to use location on the map");
         mLocationGranted = false;
         switch (requestCode) {
             case LOCATION_REQUEST_CODE: {
-                if (grantResults.length > 0) {
-                    for (int i = 0; i < grantResults.length; i++) {
-                        if (grantResults[i] != PackageManager.PERMISSION_GRANTED) {
-                            mLocationGranted = false;
-                            return;
-                        }
+                if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    if (ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
+                        mMap.setMyLocationEnabled(true);
+                        mMap.getUiSettings().setMyLocationButtonEnabled(true);
                     }
-                    mLocationGranted = true;
-                    SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                            .findFragmentById(R.id.map);
-                    mapFragment.getMapAsync(this);
+                } else {
+                    Toast.makeText(this, "Permission was nor granted!", Toast.LENGTH_SHORT).show();
                 }
             }
         }
@@ -99,7 +94,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      *  Checks to see if the app is able to find the user's location as well
      */
     private void getCurrentLocation() {
-        Log.d(TAG, "Getting the user's current location.");
+        Log.d(TAG, "Getting the user's current location on the map.");
         mFusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(this);
         try {
             if (mLocationGranted) {
@@ -108,13 +103,13 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
                     @Override
                     public void onComplete(@NonNull Task task) {
                         if (task.isSuccessful()) {
-                            Log.d(TAG, "onComplete: location found");
+                            Log.d(TAG, "onComplete: location found on the map");
                             Location current = (Location) task.getResult();
                             assert current != null;
                             LatLng currentLocation = new LatLng(current.getLatitude(), current.getLongitude());
                             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(currentLocation, 15f));
                         } else {
-                            Log.d(TAG, "onComplete: location not found");
+                            Log.d(TAG, "onComplete: location not found on the map");
                             Toast.makeText(MapsActivity.this, "Location not found", Toast.LENGTH_SHORT).show();
                         }
                     }
@@ -136,7 +131,7 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
-        Log.d(TAG, "onMapReady : manipulating map");
+        Log.d(TAG, "onMapReady : manipulating the map");
         mMap = googleMap;
         // if location is given/granted, then this method will retrieve the user's location
         if (mLocationGranted) {
@@ -150,7 +145,6 @@ public class MapsActivity extends AppCompatActivity implements OnMapReadyCallbac
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
         }
-
         // Arboretum
         LatLng arboretum = new LatLng(40.0938, -88.2163);
         mMap.addMarker(new MarkerOptions().position(arboretum).title("University of Illinois Arboretum"));
