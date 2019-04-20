@@ -7,6 +7,7 @@ import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
@@ -21,7 +22,7 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
-public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
+public class MapsActivity extends AppCompatActivity implements OnMapReadyCallback {
 
     private GoogleMap mMap;
     private static final String TAG = "MapsActivity";
@@ -36,9 +37,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        Log.d(TAG, "onCreate : creating");
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_maps);
         getLocationPermission();
+        SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
+                .findFragmentById(R.id.map);
+        assert mapFragment != null;
+        mapFragment.getMapAsync(this);
     }
 
     /**
@@ -80,7 +86,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                         }
                     }
                     mLocationGranted = true;
-                    // Obtain the SupportMapFragment and get notified when the map is ready to be used.
                     SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
                             .findFragmentById(R.id.map);
                     mapFragment.getMapAsync(this);
@@ -131,6 +136,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
      */
     @Override
     public void onMapReady(GoogleMap googleMap) {
+        Log.d(TAG, "onMapReady : manipulating map");
         mMap = googleMap;
         // if location is given/granted, then this method will retrieve the user's location
         if (mLocationGranted) {
@@ -145,10 +151,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
         }
 
-        // allerton & its mark
-        LatLng allerton = new LatLng(39.9983, -88.6517);
-        mMap.addMarker(new MarkerOptions().position(allerton).title("Allerton Park and Retreat Center"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(allerton));
+        // Arboretum
+        LatLng arboretum = new LatLng(40.0938, -88.2163);
+        mMap.addMarker(new MarkerOptions().position(arboretum).title("University of Illinois Arboretum"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(arboretum));
 
         // Alma! M!A!T!E!R!
         LatLng alma = new LatLng(40.1099, -88.2284);
@@ -165,7 +171,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(grainger).title("Grainger Engineering Library Information Center"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(grainger));
 
-        // Hallene Grateway
+        // Hallene Gateway
         LatLng hallene = new LatLng(40.1087, -88.2198);
         mMap.addMarker(new MarkerOptions().position(hallene).title("Hallene Gateway"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(hallene));
@@ -195,16 +201,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(thomas).title("Thomas M. Siebel Center for Computer Science"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(thomas));
 
-        // Aces Library
-        LatLng aces = new LatLng(40.1028, -88.2251);
-        mMap.addMarker(new MarkerOptions().position(aces).title("ACES Library, Information and Alumni Center"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(aces));
-
-        // Alice
-        LatLng alice = new LatLng(40.1080, -88.2200);
-        mMap.addMarker(new MarkerOptions().position(alice).title("Alice Campbell Alumni Center"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(alice));
-
         // Altgeld Hall
         LatLng altgeld = new LatLng(40.1093, -88.2284);
         mMap.addMarker(new MarkerOptions().position(altgeld).title("Altgeld Hall"));
@@ -220,30 +216,25 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(astronomical).title("Astronomical Observatory"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(astronomical));
 
-        // Beckman
-        LatLng beckman = new LatLng(40.1158, -88.2272);
-        mMap.addMarker(new MarkerOptions().position(beckman).title("Beckman Institute for Advanced Science and Technology"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(beckman));
+        // ARC
+        LatLng arc = new LatLng(40.1012, -88.2361);
+        mMap.addMarker(new MarkerOptions().position(arc).title("Activities and Recreation Center (ARC)"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(arc));
 
-        // Carl R.
-        LatLng carl = new LatLng(40.1048, -88.2247);
-        mMap.addMarker(new MarkerOptions().position(carl).title("Carl R. Woese Institute for Genomic Biology"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(carl));
+        // Ice Arena
+        LatLng ice = new LatLng(40.1058, -88.2325);
+        mMap.addMarker(new MarkerOptions().position(ice).title("UI Ice Arena"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(ice));
 
-        // Engineering
-        LatLng engineering = new LatLng(40.1108, -88.2269);
-        mMap.addMarker(new MarkerOptions().position(engineering).title("Engineering Hall"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(engineering));
+        // Bookstore
+        LatLng bookstore = new LatLng(40.1083, -88.2292);
+        mMap.addMarker(new MarkerOptions().position(bookstore).title("Illini Union Bookstore"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(bookstore));
 
-        // Halfway
-        LatLng halfway = new LatLng(52.6998, -2.9680);
-        mMap.addMarker(new MarkerOptions().position(halfway).title("Halfway House"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(halfway));
-
-        // Harker Hall
-        LatLng harker = new LatLng(40.1091, -88.2267);
-        mMap.addMarker(new MarkerOptions().position(harker).title("Harker Hall"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(harker));
+        // Bell Tower
+        LatLng bell = new LatLng(40.1028, -88.2272);
+        mMap.addMarker(new MarkerOptions().position(bell).title("McFarland Bell Tower"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(bell));
 
         // Krannert Art Museum and Kinkead Pavilion
         LatLng krannertArt = new LatLng(40.1019, -88.2317);
@@ -260,20 +251,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(morrow).title("Morrow Plots"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(morrow));
 
-        // Natural History Building
-        LatLng natural = new LatLng(40.1094, -88.2260);
-        mMap.addMarker(new MarkerOptions().position(natural).title("Natural History Building"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(natural));
-
         // Round Dairy Barns
         LatLng round = new LatLng(40.09604, -88.22473);
         mMap.addMarker(new MarkerOptions().position(round).title("Round Dairy Barns"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(round));
-
-        // Smith
-        LatLng smith = new LatLng(40.1057, -88.2261);
-        mMap.addMarker(new MarkerOptions().position(smith).title("Smith Hall"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(smith));
 
         // State Farm
         LatLng state = new LatLng(40.0962, -88.2359);
@@ -290,9 +271,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(univLibrary).title("University Library"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(univLibrary));
 
-        //Willard Airport
-        LatLng willard = new LatLng(40.0365, -88.2640);
-        mMap.addMarker(new MarkerOptions().position(willard).title("Willard Airport"));
-        mMap.moveCamera(CameraUpdateFactory.newLatLng(willard));
+        // Beckman
+        LatLng beckman = new LatLng(40.1158, -88.2271);
+        mMap.addMarker(new MarkerOptions().position(beckman).title("Beckman Institute for Advanced Science and Technology"));
+        mMap.moveCamera(CameraUpdateFactory.newLatLng(beckman));
     }
 }
