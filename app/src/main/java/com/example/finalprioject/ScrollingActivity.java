@@ -1,12 +1,9 @@
 package com.example.finalprioject;
 
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.Toast;
 
@@ -235,7 +232,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Did you hear the bell ring?", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -247,7 +244,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Left, left, left, right, left!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -259,7 +256,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "The Universe is pretty big..", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -271,7 +268,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Sweat it out!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -283,7 +280,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Ding! Ding! Ding!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -295,7 +292,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "The Art Museum, not the performing center...", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -307,7 +304,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Rub Lincoln's nose for good luck!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -319,7 +316,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Are these plants edible?", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -331,7 +328,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Was that a cow?!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -343,7 +340,7 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "So much to look at!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -355,19 +352,19 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Were you studying?", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
     public void addListenerOnChkUIIceArena() {
-        chkUniversityLibrary = (CheckBox) findViewById(R.id.UIIceArena);
+        chkUIIceArena = (CheckBox) findViewById(R.id.UIIceArena);
         chkUIIceArena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Don't slip!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -379,7 +376,8 @@ public class ScrollingActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Welcome to the largest building on campus!", Toast.LENGTH_LONG).show();
+
                 }
             }
         });
