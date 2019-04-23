@@ -2,6 +2,33 @@
     <string name="app_name">I-GO</string>
     <string name="title_activity_maps">I-GO</string>
     <string name="title_activity_scrolling">ScrollingActivity</string>
+    <string name="University_of_Illinois_Arboretum">University of Illinois Arboretum</string>
+    <string name="Alma_Mater">Alma Mater</string>
+    <string name="Armory">Armory</string>
+    <string name="Foellinger_Auditorium">Foellinger Auditorium</string>
+    <string name="Grainger_Engineering_Library_Information_Center">Grainger Engineering Library Information Center</string>
+    <string name="Hallene_Gateway">Hallene Gateway</string>
+    <string name="Illini_Union">Illini Union</string>
+    <string name="Krannert_Center_for_the_Performing_Arts">Krannert Center for the Performing Arts</string>
+    <string name="Memorial_Stadium">Memorial Stadium</string>
+    <string name="National_Center_for_Supercomputing_Applications">National Center for Supercomputing Applications</string>
+    <string name="Thomas_M_Siebel_Center_for_Computer_Science">Thomas M. Siebel Center for Computer Science</string>
+    <string name="Altgeld_Hall">Altgeld Hall</string>
+    <string name="Astronomical_Observatory">Astronomical Observatory</string>
+    <string name="Activities_and_Recreation_Center">Activities and Recreation Center</string>
+    <string name="UI_Ice_Arena">UI Ice Arena</string>
+    <string name="Illini_Union_Bookstore">Illini Union Bookstore</string>
+    <string name="McFarland_Bell_Tower">McFarland Bell Tower</string>
+    <string name="Krannert_Art_Museum_and_Kinkead_Pavilion">Krannert Art Museum and Kinkead Pavilion</string>
+    <string name="Lincoln_Hall">Lincoln Hall</string>
+    <string name="Morrow_Plots">Morrow Plots</string>
+    <string name="Round_Dairy_Barns">Round Dairy Barns</string>
+    <string name="State_Farm_Center">State Farm Center</string>
+    <string name="Spurlock_Museum">Spurlock Museum</string>
+    <string name="University_Library">University Library</string>
+    <string name="Beckman_Institute_for_Advanced_Science_and_Technology">Beckman Institute for Advanced Science and Technology</string>
+
+
     <string name="large_text">
         "Material is the metaphor.\n\n"
 

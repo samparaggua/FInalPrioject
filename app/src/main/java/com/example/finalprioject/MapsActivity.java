@@ -12,6 +12,7 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -28,6 +29,35 @@ import com.google.android.gms.tasks.Task;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private Button checklistButton;
+    private Button btnDisplay;
+    private CheckBox chkArboretum;
+    private CheckBox chkAlmaMater;
+    private CheckBox chkFoellingerAuditorium;
+    private CheckBox chkGraingerEngineeringLibraryInformationCenter;
+    private CheckBox chkHalleneGateway;
+    private CheckBox chkIlliniUnion;
+    private CheckBox chkKrannertCenterforthePerformingArts;
+    private CheckBox chkMemorialStadium;
+    private CheckBox chkNationalCenterforSupercomputingApplications;
+    private CheckBox chkThomasMSiebelCenterforComputerScience;
+    private CheckBox chkAltgeldHall;
+    private CheckBox chkArmory;
+    private CheckBox chkAstronomicalObservatory;
+    private CheckBox chkActivitiesandRecreationCenter;
+    private CheckBox chkUIIceArena;
+    private CheckBox chkMcFarlandBellTower;
+    private CheckBox chkKrannertArtMuseumandKinkeadPavilion;
+    private CheckBox chkLincolnHall;
+    private CheckBox chkMorrowPlots;
+    private CheckBox chkRoundDairyBarns;
+    private CheckBox chkSpurlockMuseum;
+    private CheckBox chkUniversityLibrary;
+    private CheckBox chkBeckmanInstituteforAdvancedScienceandTechnology;
+
+
+
+
+
     private GoogleMap mMap;
     private static final String TAG = "MapsActivity";
     /**
@@ -49,6 +79,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         getLocationPermission();
 
+
         checklistButton = findViewById(R.id.ChecklistID);
         checklistButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +88,11 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 openCheckList();
             }
         });
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_maps);
+//
+//        addListenerOnChkArboretum();
+//        addListenerOnButton();
     }
 
     public void openCheckList() {
@@ -287,5 +323,31 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng beckman = new LatLng(40.1158, -88.2271);
         mMap.addMarker(new MarkerOptions().position(beckman).title("Beckman Institute for Advanced Science and Technology"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(beckman));
+    }
+    public void addListenerOnChkArboretum() {
+        chkArboretum = (CheckBox) findViewById(R.id.Arboretum);
+        chkArboretum.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (((CheckBox) v).isChecked()) {
+                    Toast.makeText(MapsActivity.this, "YOU CAN DO IT! :)", Toast.LENGTH_LONG).show();
+                }
+
+            }
+        });
+    }
+
+    public void addListenerOnButton() {
+        chkArboretum = (CheckBox) findViewById(R.id.Arboretum);
+        btnDisplay.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                StringBuffer result = new StringBuffer();
+                result.append("University of Illinois Arboretum check : ").append(chkArboretum.isChecked());
+
+                Toast.makeText(MapsActivity.this, result.toString(),
+                        Toast.LENGTH_LONG).show();
+            }
+        });
     }
 }
