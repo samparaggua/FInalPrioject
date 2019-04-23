@@ -49,6 +49,7 @@ public class ScrollingActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         addListenerOnChkArboretum();
+        addListenerOnChkAlmaMater();
 
     }
     public void addListenerOnChkArboretum() {
@@ -64,12 +65,12 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkAlmaMater() {
-        chkArboretum = (CheckBox) findViewById(R.id.Arboretum);
+        chkArboretum = (CheckBox) findViewById(R.id.AlmaMater);
         chkArboretum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Did you smell the flowers like you? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
                 }
             }
         });
