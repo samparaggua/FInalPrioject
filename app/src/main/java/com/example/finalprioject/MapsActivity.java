@@ -29,30 +29,6 @@ import com.google.android.gms.tasks.Task;
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
 
     private Button checklistButton;
-    private Button btnDisplay;
-    private CheckBox chkArboretum;
-    private CheckBox chkAlmaMater;
-    private CheckBox chkFoellingerAuditorium;
-    private CheckBox chkGraingerEngineeringLibraryInformationCenter;
-    private CheckBox chkHalleneGateway;
-    private CheckBox chkIlliniUnion;
-    private CheckBox chkKrannertCenterforthePerformingArts;
-    private CheckBox chkMemorialStadium;
-    private CheckBox chkNationalCenterforSupercomputingApplications;
-    private CheckBox chkThomasMSiebelCenterforComputerScience;
-    private CheckBox chkAltgeldHall;
-    private CheckBox chkArmory;
-    private CheckBox chkAstronomicalObservatory;
-    private CheckBox chkActivitiesandRecreationCenter;
-    private CheckBox chkUIIceArena;
-    private CheckBox chkMcFarlandBellTower;
-    private CheckBox chkKrannertArtMuseumandKinkeadPavilion;
-    private CheckBox chkLincolnHall;
-    private CheckBox chkMorrowPlots;
-    private CheckBox chkRoundDairyBarns;
-    private CheckBox chkSpurlockMuseum;
-    private CheckBox chkUniversityLibrary;
-    private CheckBox chkBeckmanInstituteforAdvancedScienceandTechnology;
 
 
 
@@ -274,7 +250,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mMap.addMarker(new MarkerOptions().position(bookstore).title("Illini Union Bookstore"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(bookstore));
 
-        // Bell Tower
+        // Bell Tower 1111231312312312313123
         LatLng bell = new LatLng(40.1028, -88.2272);
         mMap.addMarker(new MarkerOptions().position(bell).title("McFarland Bell Tower"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(bell));
