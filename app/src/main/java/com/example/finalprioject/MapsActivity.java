@@ -88,11 +88,6 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 openCheckList();
             }
         });
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_maps);
-//
-//        addListenerOnChkArboretum();
-//        addListenerOnButton();
     }
 
     public void openCheckList() {
@@ -323,31 +318,5 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         LatLng beckman = new LatLng(40.1158, -88.2271);
         mMap.addMarker(new MarkerOptions().position(beckman).title("Beckman Institute for Advanced Science and Technology"));
         mMap.moveCamera(CameraUpdateFactory.newLatLng(beckman));
-    }
-    public void addListenerOnChkArboretum() {
-        chkArboretum = (CheckBox) findViewById(R.id.Arboretum);
-        chkArboretum.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(MapsActivity.this, "YOU CAN DO IT! :)", Toast.LENGTH_LONG).show();
-                }
-
-            }
-        });
-    }
-
-    public void addListenerOnButton() {
-        chkArboretum = (CheckBox) findViewById(R.id.Arboretum);
-        btnDisplay.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                StringBuffer result = new StringBuffer();
-                result.append("University of Illinois Arboretum check : ").append(chkArboretum.isChecked());
-
-                Toast.makeText(MapsActivity.this, result.toString(),
-                        Toast.LENGTH_LONG).show();
-            }
-        });
     }
 }
