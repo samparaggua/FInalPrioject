@@ -92,7 +92,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 //        setContentView(R.layout.activity_maps);
 //
 //        addListenerOnChkArboretum();
-//        addListenerOnButton()
+//        addListenerOnButton();
     }
 
     public void openCheckList() {
