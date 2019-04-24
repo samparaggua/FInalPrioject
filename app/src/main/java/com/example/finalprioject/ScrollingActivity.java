@@ -1,16 +1,16 @@
 package com.example.finalprioject;
 
-import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.Toast;
 
 
-public class ScrollingActivity extends AppCompatActivity {
+public class ScrollingActivity extends AppCompatActivity implements CompoundButton.OnCheckedChangeListener {
     private CheckBox chkArboretum;
     private CheckBox chkAlmaMater;
     private CheckBox chkFoellingerAuditorium;
@@ -66,7 +66,6 @@ public class ScrollingActivity extends AppCompatActivity {
         addListenerOnChkUIIceArena();
         addListenerOnChkMcFarlandBellTower();
         addListenerOnChkKrannertArtMuseumandKinkeadPavilion();
-
         addListenerOnChkLincolnHall();
         addListenerOnChkMorrowPlots();
         addListenerOnChkRoundDairyBarns();
@@ -74,7 +73,217 @@ public class ScrollingActivity extends AppCompatActivity {
         addListenerOnChkUniversityLibrary();
         addListenerOnChkBeckmanInstituteforAdvancedScienceandTechnology();
 
+        /**
+         * Following code is to check if any ot the locations were previously checked
+         */
+
+        chkAlmaMater = findViewById(R.id.AlmaMater);
+        chkAlmaMater.setChecked(getFromSP("alma mater"));
+        chkAlmaMater.setOnCheckedChangeListener(this);
+
+        chkAltgeldHall = findViewById(R.id.AltgeldHall);
+        chkAltgeldHall.setChecked(getFromSP("altgeld"));
+        chkAltgeldHall.setOnCheckedChangeListener(this);
+
+        chkActivitiesandRecreationCenter = findViewById(R.id.ActivitiesandRecreationCenter);
+        chkActivitiesandRecreationCenter.setChecked(getFromSP("arc"));
+        chkActivitiesandRecreationCenter.setOnCheckedChangeListener(this);
+
+        chkArboretum = findViewById(R.id.Arboretum);
+        chkArboretum.setChecked(getFromSP("arboretum"));
+        chkArboretum.setOnCheckedChangeListener(this);
+
+        chkArmory = findViewById(R.id.Armory);
+        chkArmory.setChecked(getFromSP("armory"));
+        chkArmory.setOnCheckedChangeListener(this);
+
+        chkAstronomicalObservatory = findViewById(R.id.AstronomicalObservatory);
+        chkAstronomicalObservatory.setChecked(getFromSP("astro"));
+        chkAstronomicalObservatory.setOnCheckedChangeListener(this);
+
+        chkBeckmanInstituteforAdvancedScienceandTechnology = findViewById(R.id.BeckmanInstituteforAdvancedScienceandTechnology);
+        chkBeckmanInstituteforAdvancedScienceandTechnology.setChecked(getFromSP("beckman"));
+        chkBeckmanInstituteforAdvancedScienceandTechnology.setOnCheckedChangeListener(this);
+
+        chkFoellingerAuditorium = findViewById(R.id.FoellingerAuditorium);
+        chkFoellingerAuditorium.setChecked(getFromSP("foellinger"));
+        chkFoellingerAuditorium.setOnCheckedChangeListener(this);
+
+        chkGraingerEngineeringLibraryInformationCenter = findViewById(R.id.GraingerEngineeringLibraryInformationCenter);
+        chkGraingerEngineeringLibraryInformationCenter.setChecked(getFromSP("grainger"));
+        chkGraingerEngineeringLibraryInformationCenter.setOnCheckedChangeListener(this);
+
+        chkHalleneGateway = findViewById(R.id.HalleneGateway);
+        chkHalleneGateway.setChecked(getFromSP("hallene"));
+        chkHalleneGateway.setOnCheckedChangeListener(this);
+
+        chkIlliniUnion = findViewById(R.id.IlliniUnion);
+        chkIlliniUnion.setChecked(getFromSP("union"));
+        chkIlliniUnion.setOnCheckedChangeListener(this);
+
+        chkIlliniBookStore = findViewById(R.id.Illini_Union_Bookstore);
+        chkIlliniBookStore.setChecked(getFromSP("bookstore"));
+        chkIlliniBookStore.setOnCheckedChangeListener(this);
+
+        chkKrannertArtMuseumandKinkeadPavilion = findViewById(R.id.KrannertArtMuseumandKinkeadPavilion);
+        chkKrannertArtMuseumandKinkeadPavilion.setChecked(getFromSP("krannert art"));
+        chkKrannertArtMuseumandKinkeadPavilion.setOnCheckedChangeListener(this);
+
+        chkKrannertCenterforthePerformingArts = findViewById(R.id.KrannertCenterforthePerformingArts);
+        chkKrannertCenterforthePerformingArts.setChecked(getFromSP("krannert center"));
+        chkKrannertCenterforthePerformingArts.setOnCheckedChangeListener(this);
+
+        chkLincolnHall = findViewById(R.id.LincolnHall);
+        chkLincolnHall.setChecked(getFromSP("lincoln"));
+        chkLincolnHall.setOnCheckedChangeListener(this);
+
+        chkMcFarlandBellTower = findViewById(R.id.McFarlandBellTower);
+        chkMcFarlandBellTower.setChecked(getFromSP("mcfarland"));
+        chkMcFarlandBellTower.setOnCheckedChangeListener(this);
+
+        chkMemorialStadium = findViewById(R.id.MemorialStadium);
+        chkMemorialStadium.setChecked(getFromSP("memorial"));
+        chkMemorialStadium.setOnCheckedChangeListener(this);
+
+        chkMorrowPlots = findViewById(R.id.MorrowPlots);
+        chkMorrowPlots.setChecked(getFromSP("morrow"));
+        chkMorrowPlots.setOnCheckedChangeListener(this);
+
+        chkNationalCenterforSupercomputingApplications = findViewById(R.id.NationalCenterforSupercomputingApplications);
+        chkNationalCenterforSupercomputingApplications.setChecked(getFromSP("national center"));
+        chkNationalCenterforSupercomputingApplications.setOnCheckedChangeListener(this);
+
+        chkRoundDairyBarns = findViewById(R.id.RoundDairyBarns);
+        chkRoundDairyBarns.setChecked(getFromSP("round barns"));
+        chkRoundDairyBarns.setOnCheckedChangeListener(this);
+
+        chkSpurlockMuseum = findViewById(R.id.SpurlockMuseum);
+        chkSpurlockMuseum.setChecked(getFromSP("spurlock"));
+        chkSpurlockMuseum.setOnCheckedChangeListener(this);
+
+        chkStateFarmCenter = findViewById(R.id.StateFarmCenter);
+        chkStateFarmCenter.setChecked(getFromSP("state farm"));
+        chkStateFarmCenter.setOnCheckedChangeListener(this);
+
+        chkThomasMSiebelCenterforComputerScience = findViewById(R.id.ThomasMSiebelCenterforComputerScience);
+        chkThomasMSiebelCenterforComputerScience.setChecked(getFromSP("siebel"));
+        chkThomasMSiebelCenterforComputerScience.setOnCheckedChangeListener(this);
+
+        chkUIIceArena = findViewById(R.id.UIIceArena);
+        chkUIIceArena.setChecked(getFromSP("ice arena"));
+        chkUIIceArena.setOnCheckedChangeListener(this);
+
+        chkUniversityLibrary = findViewById(R.id.UniversityLibrary);
+        chkUniversityLibrary.setChecked(getFromSP("library"));
+        chkUniversityLibrary.setOnCheckedChangeListener(this);
+
+
     }
+
+    /**
+     * checks shared preferences to see if it location check was saved beforehand
+     */
+
+    private boolean getFromSP(String key){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PROJECT_NAME", android.content.Context.MODE_PRIVATE);
+        return preferences.getBoolean(key, false);
+    }
+
+    /**
+     * to save checks
+     */
+    private void saveInSp(String key,boolean value){
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PROJECT_NAME", android.content.Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putBoolean(key, value);
+        editor.commit();
+    }
+
+    /**
+     * called to check if location was checked
+     * if so, save it to shared preferences
+     */
+    @Override
+    public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+        switch(buttonView.getId()) {
+            case R.id.AlmaMater:
+                saveInSp("alma mater", isChecked);
+                break;
+            case R.id.AltgeldHall:
+                saveInSp("altgeld", isChecked);
+                break;
+            case R.id.ActivitiesandRecreationCenter:
+                saveInSp("arc", isChecked);
+                break;
+            case R.id.Arboretum:
+                saveInSp("arboretum", isChecked);
+                break;
+            case R.id.Armory:
+                saveInSp("armory", isChecked);
+                break;
+            case R.id.AstronomicalObservatory:
+                saveInSp("astro", isChecked);
+                break;
+            case R.id.BeckmanInstituteforAdvancedScienceandTechnology:
+                saveInSp("beckman", isChecked);
+                break;
+            case R.id.FoellingerAuditorium:
+                saveInSp("foellinger", isChecked);
+                break;
+            case R.id.GraingerEngineeringLibraryInformationCenter:
+                saveInSp("grainger", isChecked);
+                break;
+            case R.id.HalleneGateway:
+                saveInSp("hallene", isChecked);
+                break;
+            case R.id.IlliniUnion:
+                saveInSp("union", isChecked);
+                break;
+            case R.id.Illini_Union_Bookstore:
+                saveInSp("bookstore", isChecked);
+                break;
+            case R.id.KrannertArtMuseumandKinkeadPavilion:
+                saveInSp("krannert art", isChecked);
+                break;
+            case R.id.KrannertCenterforthePerformingArts:
+                saveInSp("krannert center", isChecked);
+                break;
+            case R.id.LincolnHall:
+                saveInSp("lincoln", isChecked);
+                break;
+            case R.id.McFarlandBellTower:
+                saveInSp("mcfarland", isChecked);
+                break;
+            case R.id.MemorialStadium:
+                saveInSp("memorial", isChecked);
+                break;
+            case R.id.MorrowPlots:
+                saveInSp("morrow", isChecked);
+                break;
+            case R.id.NationalCenterforSupercomputingApplications:
+                saveInSp("national center", isChecked);
+                break;
+            case R.id.RoundDairyBarns:
+                saveInSp("round barns", isChecked);
+                break;
+            case R.id.SpurlockMuseum:
+                saveInSp("spurlock", isChecked);
+                break;
+            case R.id.StateFarmCenter:
+                saveInSp("atate farm", isChecked);
+                break;
+            case R.id.ThomasMSiebelCenterforComputerScience:
+                saveInSp("siebel", isChecked);
+                break;
+            case R.id.UIIceArena:
+                saveInSp("ice arena", isChecked);
+                break;
+            case R.id.UniversityLibrary:
+                saveInSp("library", isChecked);
+                break;
+        }
+    }
+
     public void addListenerOnChkArboretum() {
         chkArboretum = findViewById(R.id.Arboretum);
         chkArboretum.setOnClickListener(new View.OnClickListener() {
@@ -87,6 +296,9 @@ public class ScrollingActivity extends AppCompatActivity {
         });
     }
 
+    /**
+     * following functions are for the specified toast to appear once checked
+     */
     public void addListenerOnChkAlmaMater() {
         chkAlmaMater = findViewById(R.id.AlmaMater);
         chkAlmaMater.setOnClickListener(new View.OnClickListener() {
