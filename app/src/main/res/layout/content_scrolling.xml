@@ -32,12 +32,6 @@
             android:text="@string/Activities_and_Recreation_Center" />
 
         <CheckBox
-            android:id="@+id/Arboretum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/University_of_Illinois_Arboretum" />
-
-        <CheckBox
             android:id="@+id/Armory"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -162,6 +156,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/University_Library" />
+
+        <CheckBox
+            android:id="@+id/Arboretum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/University_of_Illinois_Arboretum" />
 
 
     </LinearLayout>
