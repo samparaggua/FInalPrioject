@@ -1,5 +1,7 @@
 package com.example.finalprioject;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
@@ -72,30 +74,21 @@ public class ScrollingActivity extends AppCompatActivity {
         addListenerOnChkUniversityLibrary();
         addListenerOnChkBeckmanInstituteforAdvancedScienceandTechnology();
 
-
-
-
-
-
-
-
-
-
     }
     public void addListenerOnChkArboretum() {
-        chkArboretum = (CheckBox) findViewById(R.id.Arboretum);
+        chkArboretum = findViewById(R.id.Arboretum);
         chkArboretum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Did you smell the flowers like you? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Did you smell the flowers, like you? ", Toast.LENGTH_LONG).show();
                 }
             }
         });
     }
 
     public void addListenerOnChkAlmaMater() {
-        chkAlmaMater = (CheckBox) findViewById(R.id.AlmaMater);
+        chkAlmaMater = findViewById(R.id.AlmaMater);
         chkAlmaMater.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,7 +100,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkFoellingerAuditorium() {
-        chkFoellingerAuditorium = (CheckBox) findViewById(R.id.FoellingerAuditorium);
+        chkFoellingerAuditorium = findViewById(R.id.FoellingerAuditorium);
         chkFoellingerAuditorium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -119,7 +112,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkGraingerEngineeringLibraryInformationCenter() {
-        chkGraingerEngineeringLibraryInformationCenter = (CheckBox) findViewById(R.id.GraingerEngineeringLibraryInformationCenter);
+        chkGraingerEngineeringLibraryInformationCenter = findViewById(R.id.GraingerEngineeringLibraryInformationCenter);
         chkGraingerEngineeringLibraryInformationCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -131,7 +124,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkHalleneGateway() {
-        chkHalleneGateway = (CheckBox) findViewById(R.id.HalleneGateway);
+        chkHalleneGateway = findViewById(R.id.HalleneGateway);
         chkHalleneGateway.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -143,7 +136,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkIlliniUnion() {
-        chkIlliniUnion = (CheckBox) findViewById(R.id.IlliniUnion);
+        chkIlliniUnion = findViewById(R.id.IlliniUnion);
         chkIlliniUnion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,7 +148,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkMemorialStadium() {
-        chkMemorialStadium = (CheckBox) findViewById(R.id.MemorialStadium);
+        chkMemorialStadium = findViewById(R.id.MemorialStadium);
         chkMemorialStadium.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -167,7 +160,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkKrannertCenterforthePerformingArts() {
-        chkKrannertCenterforthePerformingArts = (CheckBox) findViewById(R.id.KrannertCenterforthePerformingArts);
+        chkKrannertCenterforthePerformingArts = findViewById(R.id.KrannertCenterforthePerformingArts);
         chkKrannertCenterforthePerformingArts.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -179,7 +172,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkNationalCenterforSupercomputingApplications() {
-        chkNationalCenterforSupercomputingApplications = (CheckBox) findViewById(R.id.NationalCenterforSupercomputingApplications);
+        chkNationalCenterforSupercomputingApplications = findViewById(R.id.NationalCenterforSupercomputingApplications);
         chkNationalCenterforSupercomputingApplications.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -191,7 +184,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkThomasMSiebelCenterforComputerScience() {
-        chkThomasMSiebelCenterforComputerScience = (CheckBox) findViewById(R.id.ThomasMSiebelCenterforComputerScience);
+        chkThomasMSiebelCenterforComputerScience = findViewById(R.id.ThomasMSiebelCenterforComputerScience);
         chkThomasMSiebelCenterforComputerScience.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -203,7 +196,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkStateFarmCenter() {
-        chkStateFarmCenter = (CheckBox) findViewById(R.id.StateFarmCenter);
+        chkStateFarmCenter = findViewById(R.id.StateFarmCenter);
         chkStateFarmCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -215,7 +208,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkIlliniBookStore() {
-        chkIlliniBookStore = (CheckBox) findViewById(R.id.Illini_Union_Bookstore);
+        chkIlliniBookStore = findViewById(R.id.Illini_Union_Bookstore);
         chkIlliniBookStore.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -227,7 +220,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkAltgeldHall() {
-        chkAltgeldHall = (CheckBox) findViewById(R.id.AltgeldHall);
+        chkAltgeldHall = findViewById(R.id.AltgeldHall);
         chkAltgeldHall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -239,7 +232,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkArmory() {
-        chkArmory = (CheckBox) findViewById(R.id.Armory);
+        chkArmory = findViewById(R.id.Armory);
         chkArmory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -251,7 +244,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkAstronomicalObservatory() {
-        chkAstronomicalObservatory = (CheckBox) findViewById(R.id.AstronomicalObservatory);
+        chkAstronomicalObservatory = findViewById(R.id.AstronomicalObservatory);
         chkAstronomicalObservatory.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -263,7 +256,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkActivitiesandRecreationCenter() {
-        chkActivitiesandRecreationCenter = (CheckBox) findViewById(R.id.ActivitiesandRecreationCenter);
+        chkActivitiesandRecreationCenter = findViewById(R.id.ActivitiesandRecreationCenter);
         chkActivitiesandRecreationCenter.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -275,7 +268,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkMcFarlandBellTower() {
-        chkMcFarlandBellTower = (CheckBox) findViewById(R.id.McFarlandBellTower);
+        chkMcFarlandBellTower = findViewById(R.id.McFarlandBellTower);
         chkMcFarlandBellTower.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -287,7 +280,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkKrannertArtMuseumandKinkeadPavilion() {
-        chkKrannertArtMuseumandKinkeadPavilion = (CheckBox) findViewById(R.id.KrannertArtMuseumandKinkeadPavilion);
+        chkKrannertArtMuseumandKinkeadPavilion = findViewById(R.id.KrannertArtMuseumandKinkeadPavilion);
         chkKrannertArtMuseumandKinkeadPavilion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -299,7 +292,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkLincolnHall() {
-        chkLincolnHall = (CheckBox) findViewById(R.id.LincolnHall);
+        chkLincolnHall = findViewById(R.id.LincolnHall);
         chkLincolnHall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -311,7 +304,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkMorrowPlots() {
-        chkMorrowPlots = (CheckBox) findViewById(R.id.MorrowPlots);
+        chkMorrowPlots = findViewById(R.id.MorrowPlots);
         chkMorrowPlots.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -323,7 +316,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkRoundDairyBarns() {
-        chkRoundDairyBarns = (CheckBox) findViewById(R.id.RoundDairyBarns);
+        chkRoundDairyBarns = findViewById(R.id.RoundDairyBarns);
         chkRoundDairyBarns.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -335,7 +328,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkSpurlockMuseum() {
-        chkSpurlockMuseum = (CheckBox) findViewById(R.id.SpurlockMuseum);
+        chkSpurlockMuseum = findViewById(R.id.SpurlockMuseum);
         chkSpurlockMuseum.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -347,7 +340,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkUniversityLibrary() {
-        chkUniversityLibrary = (CheckBox) findViewById(R.id.UniversityLibrary);
+        chkUniversityLibrary = findViewById(R.id.UniversityLibrary);
         chkUniversityLibrary.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -359,7 +352,7 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkUIIceArena() {
-        chkUIIceArena = (CheckBox) findViewById(R.id.UIIceArena);
+        chkUIIceArena = findViewById(R.id.UIIceArena);
         chkUIIceArena.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -371,13 +364,12 @@ public class ScrollingActivity extends AppCompatActivity {
     }
 
     public void addListenerOnChkBeckmanInstituteforAdvancedScienceandTechnology() {
-        chkBeckmanInstituteforAdvancedScienceandTechnology = (CheckBox) findViewById(R.id.BeckmanInstituteforAdvancedScienceandTechnology);
+        chkBeckmanInstituteforAdvancedScienceandTechnology = findViewById(R.id.BeckmanInstituteforAdvancedScienceandTechnology);
         chkBeckmanInstituteforAdvancedScienceandTechnology.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
                     Toast.makeText(ScrollingActivity.this, "Welcome to the largest building on campus!", Toast.LENGTH_LONG).show();
-
                 }
             }
         });
