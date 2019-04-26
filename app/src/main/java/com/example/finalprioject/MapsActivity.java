@@ -12,7 +12,6 @@ import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.Toast;
 
 import com.google.android.gms.location.FusedLocationProviderClient;
@@ -27,14 +26,11 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback {
-
+    // checklist button
     private Button checklistButton;
-
-
-
-
-
+    // map variable to use
     private GoogleMap mMap;
+    // for logs
     private static final String TAG = "MapsActivity";
     /**
      * @param mLocationGranted - boolean to check if app can use user's location
@@ -55,7 +51,10 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mapFragment.getMapAsync(this);
         getLocationPermission();
 
-
+        /**
+         * makes the button appear when app is opened
+         * if the the button is clicked, will call the open checklist method
+         */
         checklistButton = findViewById(R.id.ChecklistID);
         checklistButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -66,6 +65,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         });
     }
 
+    /**
+     * method that will open the scrolling activity/ checklist
+     */
     public void openCheckList() {
         Intent intent = new Intent(this, ScrollingActivity.class);
         startActivity(intent);
@@ -170,6 +172,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
             mMap.setMyLocationEnabled(true);
             mMap.getUiSettings().setMyLocationButtonEnabled(true);
         }
+        /**
+         * markers for each location
+         */
         // Arboretum
         LatLng arboretum = new LatLng(40.0938, -88.2163);
         mMap.addMarker(new MarkerOptions().position(arboretum).title("University of Illinois Arboretum"));

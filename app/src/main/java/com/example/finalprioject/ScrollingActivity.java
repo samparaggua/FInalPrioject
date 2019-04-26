@@ -190,7 +190,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
     }
 
     /**
-     * to save checks
+     * to save checks in shared preferences
      */
     private void saveInSp(String key,boolean value){
         SharedPreferences preferences = getApplicationContext().getSharedPreferences("PROJECT_NAME", android.content.Context.MODE_PRIVATE);
@@ -284,6 +284,9 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
         }
     }
 
+    /**
+     * Following functions are for the specified toast to appear once checked
+     */
     public void addListenerOnChkArboretum() {
         chkArboretum = findViewById(R.id.Arboretum);
         chkArboretum.setOnClickListener(new View.OnClickListener() {
@@ -296,9 +299,6 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
         });
     }
 
-    /**
-     * following functions are for the specified toast to appear once checked
-     */
     public void addListenerOnChkAlmaMater() {
         chkAlmaMater = findViewById(R.id.AlmaMater);
         chkAlmaMater.setOnClickListener(new View.OnClickListener() {

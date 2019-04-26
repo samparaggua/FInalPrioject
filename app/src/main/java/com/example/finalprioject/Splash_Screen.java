@@ -5,6 +5,9 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+/**
+ * The splash screen with our logo
+ */
 public class Splash_Screen extends AppCompatActivity {
 
     @Override
