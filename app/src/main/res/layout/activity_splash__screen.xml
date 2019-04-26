@@ -11,4 +11,26 @@
         android:layout_centerInParent="true"
         android:src="@drawable/logo" />
 
+    <TextView
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="34dp"
+        android:gravity="center_horizontal"
+        android:text="Created By:"
+        android:textColor="#000080"
+        android:textSize="20dp" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:gravity="center_horizontal"
+        android:text="Hyojun Kim and Sam Paraggua"
+        android:textColor="#000080"
+        android:textSize="20dp" />
+
+
 </RelativeLayout>
