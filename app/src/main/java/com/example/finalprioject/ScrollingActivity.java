@@ -305,7 +305,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, " You will come to this place again on your graduation day", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -317,7 +317,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "You did a good job climbing the staris.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -329,7 +329,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "One of the biggest library in the world!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -341,7 +341,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "You will also come back to this place when you graduate! YAY!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -353,7 +353,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "This place has everything: sofa, ATM, and food.", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -365,7 +365,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "G-O! I-L-L-N-I", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -377,7 +377,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Put some eye candy[ㅇ-ㅇ]", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -389,7 +389,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Is Jimmy Neutron here?", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -401,7 +401,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Where is Geoff? Let's find Geoff!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -413,7 +413,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, " G-O! 가자! I-L-L-N-I!", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -425,7 +425,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Been to our Jesus? ", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "YES! AMAZON PICK UP Location!! ", Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -437,7 +437,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Did you hear the bell ring?", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "Hmm... where is another Pythagoras?", Toast.LENGTH_LONG).show();
                 }
             }
         });
