@@ -185,7 +185,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
      */
 
     private boolean getFromSP(String key){
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PROJECT_NAME", android.content.Context.MODE_PRIVATE);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("shared", android.content.Context.MODE_PRIVATE);
         return preferences.getBoolean(key, false);
     }
 
@@ -193,7 +193,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
      * to save checks in shared preferences
      */
     private void saveInSp(String key,boolean value){
-        SharedPreferences preferences = getApplicationContext().getSharedPreferences("PROJECT_NAME", android.content.Context.MODE_PRIVATE);
+        SharedPreferences preferences = getApplicationContext().getSharedPreferences("shared", android.content.Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean(key, value);
         editor.commit();
@@ -437,7 +437,7 @@ public class ScrollingActivity extends AppCompatActivity implements CompoundButt
             @Override
             public void onClick(View v) {
                 if (((CheckBox) v).isChecked()) {
-                    Toast.makeText(ScrollingActivity.this, "Hmm... where is another Pythagoras?", Toast.LENGTH_LONG).show();
+                    Toast.makeText(ScrollingActivity.this, "What song is playing?", Toast.LENGTH_LONG).show();
                 }
             }
         });
